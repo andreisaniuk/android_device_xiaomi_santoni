@@ -208,9 +208,6 @@ service.qti.ims.enabled=1
 telephony.lteOnCdmaDevice=1
 persist.radio.schd.cache=3500
 
-#SdcardFs
-ro.sys.sdcardfs=true
-
 # Time Services
 persist.timed.enable=true
 
