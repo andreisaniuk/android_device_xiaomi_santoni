@@ -85,7 +85,6 @@ dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 debug.enable.sglscale=1
 debug.gralloc.enable_fb_ubwc=1
-ro.opengles.version=196610
 ro.qualcomm.cabl=0
 ro.qualcomm.svi=0
 ro.sf.lcd_density=320
