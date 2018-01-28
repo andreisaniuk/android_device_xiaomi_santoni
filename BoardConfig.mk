@@ -46,9 +46,6 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_CONFIG := santoni_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 
-# ANT+
-BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
-
 # Audio
 AUDIO_FEATURE_ENABLED_ALAC_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true
@@ -179,10 +176,6 @@ TARGET_PROVIDES_KEYMASTER := true
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# Lineage Hardware
-BOARD_HARDWARE_CLASS += \
-    $(DEVICE_PATH)/lineagehw
-
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
 
@@ -212,7 +205,7 @@ TARGET_USE_SDCLANG := true
 
 # RIL
 PROTOBUF_SUPPORTED := true
-TARGET_RIL_VARIANT := caf
+#TARGET_RIL_VARIANT := caf
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery/fstab.qcom

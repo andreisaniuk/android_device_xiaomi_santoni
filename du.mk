@@ -12,19 +12,22 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-include $(CLEAR_VARS)
-LOCAL_SHARED_LIBRARIES := libhidltransport
-LOCAL_MODULE := android.hidl.base@1.0
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_VENDOR_MODULE := true
-include $(BUILD_SHARED_LIBRARY)
+$(call inherit-product, device/xiaomi/santoni/full_santoni.mk)
 
-include $(CLEAR_VARS)
-LOCAL_SHARED_LIBRARIES := libhidltransport
-LOCAL_MODULE := android.hidl.manager@1.0
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_VENDOR_MODULE := true
-include $(BUILD_SHARED_LIBRARY)
+# Inherit some common DU stuff.
+$(call inherit-product, vendor/du/config/common_full_phone.mk)
+
+PRODUCT_NAME := du_santoni
+PRODUCT_DEVICE := santoni
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_BRAND := Xiaomi
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+TARGET_VENDOR_PRODUCT_NAME := santoni
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_FINGERPRINT="Xiaomi/santoni/santoni:7.1.2/N2G47H/V9.5.4.0.NAMMIFA:user/release-keys" \
+    PRIVATE_BUILD_DESC="santoni-user 7.1.2 N2G47H V9.5.4.0.NAMMIFA release-keys"

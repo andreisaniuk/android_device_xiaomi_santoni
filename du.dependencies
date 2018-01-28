@@ -1,0 +1,12 @@
+[
+  {
+    "repository": "LineageOS/android_device_qcom_common",
+    "target_path": "device/qcom/common",
+    "branch"     : "lineage-15.0"
+  },
+  {
+   "repository" : "DirtyUnicorns/android_system_qcom",
+   "target_path": "system/qcom",
+   "branch"     : "o8x-caf"
+ }
+]
