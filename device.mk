@@ -82,6 +82,7 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcompostprocbundle \
+    libtinycompress \
     tinymix
 
 PRODUCT_PACKAGES += \
