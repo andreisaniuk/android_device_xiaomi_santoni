@@ -533,6 +533,9 @@ on property:bluetooth.startbtsnoop=false
 
 on property:vold.decrypt=trigger_restart_framework
     start config_bt_addr
+    stop camera-provider-2-4
+    start camera-provider-2-4
+    start qcom-c_main-sh
     start wcnss-service
 
 on property:persist.env.fastdorm.enabled=true
