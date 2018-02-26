@@ -65,10 +65,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
-# Offline Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
@@ -152,6 +148,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
+
+# Charger
+include $(LOCAL_PATH)/rootdir/charger/charger.mk
 
 # Display
 PRODUCT_PACKAGES += \
