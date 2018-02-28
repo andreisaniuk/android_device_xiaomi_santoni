@@ -114,9 +114,6 @@ WITH_LINEAGE_CHARGER := false
 # CNE / DPM
 BOARD_USES_QCNE := true
 
-# Crypto
-TARGET_HW_DISK_ENCRYPTION := true
-
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
@@ -148,6 +145,13 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 USE_OPENGL_RENDERER := true
+
+# Encryption
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/cryptfs_hw
+
+# Extended Filesystem Support
+TARGET_EXFAT_DRIVER := sdfat
 
 # Filesystem
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
