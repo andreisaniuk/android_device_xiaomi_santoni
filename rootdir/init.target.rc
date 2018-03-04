@@ -69,6 +69,9 @@ service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics
     writepid /dev/cpuset/system-background/tasks
+
+# default country code
+setprop ro.boot.wificountrycode 00
 	
 #Start up peripheral manager
 service per_mgr /vendor/bin/pm-service
@@ -212,6 +215,10 @@ on property:init.svc.surfaceflinger=running
 
 on property:init.svc.surfaceflinger=restarting
     stop ppd
+
+on property:init.svc.surfaceflinger=restarting
+    stop hwcomposer-2-1
+    start hwcomposer-2-1
 
 on property:init.svc.zygote=stopped
     stop ppd
