@@ -658,6 +658,12 @@ service qmuxd /system/bin/qmuxd
     user root
     group radio audio bluetooth gps nfc diag
 
+service atfwd /system/vendor/bin/ATFWD-daemon
+    class late_start
+    user system
+    group system radio
+    writepid /dev/cpuset/system-background/tasks
+
 service netmgrd /system/vendor/bin/netmgrd
     class main
     user root
