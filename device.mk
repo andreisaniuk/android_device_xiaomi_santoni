@@ -233,6 +233,7 @@ PRODUCT_PACKAGES += \
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/ft5x06_720p.kl:system/vendor/usr/keylayout/ft5x06_720p.kl \
+    $(LOCAL_PATH)/keylayout/ft5x06_ts.kl:system/vendor/usr/keylayout/ft5x06_ts.kl \
     $(LOCAL_PATH)/keylayout/gf3208.kl:system/vendor/usr/keylayout/gf3208.kl \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/vendor/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/keylayout/msm8920-sku7-snd-card_Button_Jack.kl:system/vendor/usr/keylayout/msm8920-sku7-snd-card_Button_Jack.kl \
