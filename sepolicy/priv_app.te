@@ -3,3 +3,4 @@ allow priv_app proc_interrupts:file { open read };
 allow priv_app rfs_system_file:dir getattr;
 binder_call(priv_app, hal_memtrack_default);
 allow priv_app hal_memtrack_hwservice:hwservice_manager find;
+allow priv_app proc_stat:file read;

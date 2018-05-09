@@ -1,1 +1,2 @@
 allow time_daemon system_data_file:dir { add_name write };
+allow time_daemon time_data_file:lnk_file read;
