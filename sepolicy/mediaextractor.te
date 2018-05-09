@@ -1,0 +1,3 @@
+allow mediaextractor sdcard_posix:file { read getattr };
+allow mediaextractor system_server:fifo_file { write append };
+get_prop(mediaextractor, { fuse sdcardfs vfat })

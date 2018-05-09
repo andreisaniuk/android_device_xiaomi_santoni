@@ -1,0 +1,5 @@
+allow priv_app app_data_file:file unlink;
+allow priv_app proc_interrupts:file { open read };
+allow priv_app rfs_system_file:dir getattr;
+binder_call(priv_app, hal_memtrack_default);
+allow priv_app hal_memtrack_hwservice:hwservice_manager find;

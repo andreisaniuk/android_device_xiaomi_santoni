@@ -1,0 +1,4 @@
+allow thermal-engine sysfs_uio:dir { open read search };
+allow thermal-engine sysfs_uio:lnk_file read;
+allow thermal-engine sysfs_uio_file:dir search;
+allow thermal-engine sysfs_uio_file:file { getattr open read };

@@ -1,0 +1,1 @@
+allow time_daemon system_data_file:dir { add_name write };
