@@ -1,2 +1,3 @@
 get_prop(untrusted_app, camera_prop);
 get_prop(untrusted_app_25, camera_prop);
+allow untrusted_app proc_vmstat:file r_file_perms;

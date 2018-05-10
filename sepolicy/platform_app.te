@@ -1,1 +1,2 @@
 allow platform_app qemu_hw_mainkeys_prop:file { getattr open read };
+allow platform_app proc_vmstat:file r_file_perms;

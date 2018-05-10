@@ -1,1 +1,2 @@
-genfscon proc /touchpanel    u:object_r:proc_touchpanel:s0
+genfscon proc /touchpanel	u:object_r:proc_touchpanel:s0
+genfscon proc /vmstat		u:object_r:proc_vmstat:s0
