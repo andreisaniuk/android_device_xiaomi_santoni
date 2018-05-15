@@ -1,8 +1,21 @@
-allow priv_app app_data_file:file unlink;
-allow priv_app proc_interrupts:file { open read };
-allow priv_app rfs_system_file:dir getattr;
 binder_call(priv_app, hal_memtrack_default);
 allow priv_app hal_memtrack_hwservice:hwservice_manager find;
-allow priv_app proc_stat:file read;
-allow priv_app firmware_file:dir { getattr open read };
-allow priv_app mac_perms_file:file { getattr open read };
+
+allow priv_app app_data_file:file unlink;
+allow priv_app firmware_file:dir { getattr open read search };
+allow priv_app fsck_exec:lnk_file getattr;
+
+allow priv_app {
+	proc_stat
+	net_dns_prop
+	proc_interrupts
+	mac_perms_file
+}:file { getattr open read };
+
+allow priv_app {
+	rfs_system_file
+	nfc_data_file
+	radio_data_file
+	system_app_data_file
+	bluetooth_data_file
+}:dir getattr;

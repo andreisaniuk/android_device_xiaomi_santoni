@@ -1,2 +1,2 @@
 allow vold proc_touchpanel:dir r_dir_perms;
-allow vold { persist_file logd }:dir { getattr open read };
+allow vold { persist_file logd }:dir { getattr open read ioctl };
