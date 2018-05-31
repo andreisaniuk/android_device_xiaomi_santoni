@@ -1,6 +1,6 @@
 binder_call(priv_app, hal_memtrack_default);
 allow priv_app hal_memtrack_hwservice:hwservice_manager find;
-
+allow priv_app proc_vmstat:file r_file_perms;
 allow priv_app app_data_file:file unlink;
 allow priv_app firmware_file:dir { getattr open read search };
 allow priv_app fsck_exec:lnk_file getattr;
