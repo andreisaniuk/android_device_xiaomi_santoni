@@ -1,4 +1,7 @@
-allow thermal-engine sysfs_uio:dir { open read search };
-allow thermal-engine sysfs_uio:lnk_file read;
-allow thermal-engine sysfs_uio_file:dir search;
-allow thermal-engine sysfs_uio_file:file { getattr open read };
+#============= thermal-engine ==============
+allow thermal-engine file_contexts_file:file { getattr open read };
+allow thermal-engine self:process setfscreate;
+allow thermal-engine shell_exec:file { execute execute_no_trans getattr open read };
+allow thermal-engine socket_device:sock_file { create relabelfrom setattr };
+allow thermal-engine thermal_socket:sock_file relabelto;
+allow thermal-engine toolbox_exec:file { execute execute_no_trans getattr open read };
