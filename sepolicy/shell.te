@@ -1,0 +1,3 @@
+#============= shell ==============
+allow shell init_exec:file getattr;
+allow shell sysfs_graphics:file getattr;
