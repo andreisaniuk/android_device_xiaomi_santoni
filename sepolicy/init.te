@@ -1,0 +1,7 @@
+allow init shell_exec:file { execute open read };
+allow init btnvtool_exec:file { execute read open };
+allow init property_socket:sock_file { write }; 
+allow init init:socket { read create read };
+#allow init firmware_file:dir create;
+allow init unlabeled:file rw_file_perms;
+allow init unlabeled:dir { execute };
