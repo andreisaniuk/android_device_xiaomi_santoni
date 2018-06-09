@@ -421,12 +421,13 @@ int process_3a_data(cam_3a_params_t *p_3a_params, QOMX_EXIF_INFO *exif_info)
   if (p_3a_params->exp_time <= 0.0f) {
     val_rat.num = 0;
     val_rat.denom = 0;
-  } else if (p_3a_params->exp_time < 1.0f) {
+  } else
+    if (p_3a_params->exp_time <= 1.0f) {
+    val_rat.num = (uint32_t)p_3a_params->exp_time;
+    val_rat.denom = 1;
+  } else {
     val_rat.num = 1;
     val_rat.denom = ROUND(1.0/p_3a_params->exp_time);
-  } else {
-    val_rat.num = ROUND(p_3a_params->exp_time);
-    val_rat.denom = 1;
   }
   LOGD("numer %d denom %d %zd", val_rat.num, val_rat.denom,
     sizeof(val_rat) / (8));
