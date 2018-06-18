@@ -42,6 +42,12 @@ vendor.voice.playback.conc.disabled=true \
 vendor.voice.record.conc.disabled=false \
 vendor.voice.voip.conc.disabled=true \
 
+# DTS Eagle
+PRODUCT_PROPERTY_OVERRIDES += \
+vendor.audio.use.dts_eagle=true \
+use.dts_eagle=true \
+hpx_send_params=1
+
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
 bluetooth.hfp.client=1 \
@@ -67,9 +73,11 @@ camera.hal1.packagelist=com.skype.raider,com.google.android.talk
 # CNE/DPM
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.cne.feature=1
+
  # Coresight
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.debug.coresight.config=stm-events
+
  # Display
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.debug.wfd.enable=1 \
@@ -88,26 +96,32 @@ ro.qualcomm.cabl=0 \
 ro.qualcomm.svi=0 \
 ro.sf.lcd_density=320 \
 sys.display-size=3840x2160
- # DRM
+
+# DRM
 PRODUCT_PROPERTY_OVERRIDES += \
 drm.service.enabled=true
- #Enable B service adj transition by default
+
+#Enable B service adj transition by default
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.qti.sys.fw.bservice_enable=true \
 ro.vendor.qti.sys.fw.bservice_limit=5 \
 ro.vendor.qti.sys.fw.bservice_age=5000
- # Fingerprint
+
+# Fingerprint
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.qfp=false
- # Fm
+
+# Fm
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.fm.transmitter=false
- # GPS
+
+# GPS
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.gps.qc_nlp_in_use=1 \
 persist.loc.nlp_name=com.qualcomm.location \
 ro.gps.agps_provider=1
- # Media
+
+# Media
 PRODUCT_PROPERTY_OVERRIDES += \
 media.msm8956hw=0 \
 mm.enable.smoothstreaming=true \
@@ -121,7 +135,8 @@ vendor.vidc.dec.downscalar_width=1920 \
 vendor.vidc.dec.downscalar_height=1088 \
 vendor.vidc.disable.split.mode=1 \
 vendor.vidc.enc.disable.pq=true
- # Perf \
+
+# Perf
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.gt_library=libqti-gt.so \
 ro.vendor.at_library=libqti-at.so \
@@ -130,12 +145,14 @@ ro.vendor.qti.am.reschedule_service=true \
 ro.vendor.qti.core_ctl_min_cpu=2 \
 ro.vendor.qti.core_ctl_max_cpu=4 \
 ro.sys.fw.dex2oat_thread_count=4 \
- # Netmgrd 
+
+# Netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.use_data_netmgrd=true \
 persist.data.netmgrd.qos.enable=true \
 persist.data.mode=concurrent
- # Nitz
+
+# Nitz
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.rild.nitz_plmn="" \
 persist.rild.nitz_long_ons_0="" \
@@ -146,7 +163,8 @@ persist.rild.nitz_short_ons_0="" \
 persist.rild.nitz_short_ons_1="" \
 persist.rild.nitz_short_ons_2="" \
 persist.rild.nitz_short_ons_3=""
- # Radio
+
+# Radio
 PRODUCT_PROPERTY_OVERRIDES += \
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
 rild.libargs=-d /dev/smd0 \
@@ -193,38 +211,43 @@ persist.vendor.radio.rat_on=combine \
 persist.vendor.radio.sib16_support=1 \
 service.qti.ims.enabled=1 \
 telephony.lteOnCdmaDevice=1
- # RescueParty
-PRODUCT_PROPERTY_OVERRIDES += \
-persist.sys.disable_rescue=true
+
  #SdcardFs
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.sys.sdcardfs=true
- # Time Services \
+
+# Time Services \
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.timed.enable=true
- # Tcp
+
+# Tcp
 PRODUCT_PROPERTY_OVERRIDES += \
 net.tcp.2g_init_rwnd=10
- # Trim properties
+
+# Trim properties
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.qti.sys.fw.use_trim_settings=true \
 ro.vendor.qti.sys.fw.empty_app_percent=50 \
 ro.vendor.qti.sys.fw.trim_empty_percent=100 \
 ro.vendor.qti.sys.fw.trim_cache_percent=100 \
 ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
- # Usb
+
+# Usb
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.sys.usb.config.extra=none
- # Wifi
+
+# Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
 wifi.interface=wlan0
- # Create zram disk
+
+# Create zram disk
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.config.zram=true
- # Create Swap disk, if below sys-prop enabled & also if device has lower (< 1 GB) RAM
+# Create Swap disk, if below sys-prop enabled & also if device has lower (< 1 GB) RAM
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.config.swap=true
- # ADB
+
+# ADB
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.adb.secure=0 \
 persist.service.debuggable=1 \
