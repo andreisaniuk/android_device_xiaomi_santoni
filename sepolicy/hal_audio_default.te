@@ -1,0 +1,2 @@
+allow hal_audio_default dts_data_file:dir { add_name remove_name write };
+allow hal_audio_default dts_data_file:file { create open read setattr unlink write };
