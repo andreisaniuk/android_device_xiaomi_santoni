@@ -121,16 +121,4 @@ void vendor_load_properties()
     android::init::property_set("dalvik.vm.heaptargetutilization", "0.75");
     android::init::property_set("dalvik.vm.heapminfree", heapminfree);
     android::init::property_set("dalvik.vm.heapmaxfree", heapmaxfree);
-
-    android::init::property_set("ro.hwui.texture_cache_size", "72");
-    android::init::property_set("ro.hwui.layer_cache_size", "48");
-    android::init::property_set("ro.hwui.r_buffer_cache_size", "8");
-    android::init::property_set("ro.hwui.path_cache_size", "32");
-    android::init::property_set("ro.hwui.gradient_cache_size", "1");
-    android::init::property_set("ro.hwui.drop_shadow_cache_size", "6");
-    android::init::property_set("ro.hwui.texture_cache_flushrate", "0.4");
-    android::init::property_set("ro.hwui.text_small_cache_width", "1024");
-    android::init::property_set("ro.hwui.text_small_cache_height", "1024");
-    android::init::property_set("ro.hwui.text_large_cache_width", "2048");
-    android::init::property_set("ro.hwui.text_large_cache_height", large_cache_height);
 }
