@@ -27,7 +27,3 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 TARGET_VENDOR_PRODUCT_NAME := santoni
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT="Xiaomi/santoni/santoni:7.1.2/N2G47H/V9.5.4.0.NAMMIFA:user/release-keys" \
-    PRIVATE_BUILD_DESC="santoni-user 7.1.2 N2G47H V9.5.4.0.NAMMIFA release-keys"
