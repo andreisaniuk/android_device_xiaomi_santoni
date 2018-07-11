@@ -1,0 +1,3 @@
+
+#============= hal_ir_default ==============
+allow hal_ir_default sysfs_leds:dir search;
