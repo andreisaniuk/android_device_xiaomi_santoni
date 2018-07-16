@@ -423,3 +423,7 @@ etc/firmware/a530v2_seq.fw2:vendor/firmware/a530v2_seq.fw2
 etc/firmware/a530v3_gpmu.fw2:vendor/firmware/a530v3_gpmu.fw2
 etc/firmware/a530v3_seq.fw2:vendor/firmware/a530v3_seq.fw2
 etc/firmware/a540_gpmu.fw2:vendor/firmware/a540_gpmu.fw2
+
+# Touchscreen config | MIUI 10 8.7.12
+etc/ft5336_biel_1080p.ini:vendor/etc/ft5336_biel_1080p.ini
+etc/ft5336_oufei_720p.ini:vendor/etc/ft5336_oufei_720p.ini
