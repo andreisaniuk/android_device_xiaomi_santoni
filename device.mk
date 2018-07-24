@@ -412,6 +412,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
+# Native libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/public.libraries.txt:system/vendor/etc/public.libraries.txt
+
 # Wifi
 PRODUCT_PACKAGES += \
     libcld80211 \
