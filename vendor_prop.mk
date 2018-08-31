@@ -41,12 +41,13 @@ vendor.voice.conc.fallbackpath=deep-buffer \
 vendor.voice.playback.conc.disabled=true \
 vendor.voice.record.conc.disabled=false \
 vendor.voice.voip.conc.disabled=true \
-
-# DTS Eagle
-PRODUCT_PROPERTY_OVERRIDES += \
 vendor.audio.use.dts_eagle=true \
 use.dts_eagle=true \
-hpx_send_params=1
+hpx_send_params=1 \
+
+# Low audio flinger standby delay to reduce power consumption
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.audio.flinger_standbytime_ms=300
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -72,13 +73,13 @@ camera.hal1.packagelist=com.skype.raider,com.google.android.talk
 
 # CNE/DPM
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.cne.feature=1
+persist.cne.feature=1 
 
- # Coresight
+# Coresight
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.debug.coresight.config=stm-events
 
- # Display
+# Display
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.debug.wfd.enable=1 \
 persist.hwc.enable_vds=1 \
@@ -91,7 +92,6 @@ dev.pm.dyn_samplingrate=1 \
 persist.demo.hdmirotationlock=false \
 debug.enable.sglscale=1 \
 debug.gralloc.enable_fb_ubwc=1 \
-ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
 ro.qualcomm.svi=0 \
 ro.sf.lcd_density=320 \
@@ -101,7 +101,7 @@ sys.display-size=3840x2160
 PRODUCT_PROPERTY_OVERRIDES += \
 drm.service.enabled=true
 
-#Enable B service adj transition by default
+# Enable B service adj transition by default
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.qti.sys.fw.bservice_enable=true \
 ro.vendor.qti.sys.fw.bservice_limit=5 \
@@ -136,21 +136,36 @@ vendor.vidc.dec.downscalar_height=1088 \
 vendor.vidc.disable.split.mode=1 \
 vendor.vidc.enc.disable.pq=true
 
+# Core control
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.qti.core_ctl_min_cpu=2 \
+ro.vendor.qti.core_ctl_max_cpu=4
+
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+dalvik.vm.dex2oat-filter=speed \
+dalvik.vm.image-dex2oat-filter=speed
+
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.gt_library=libqti-gt.so \
 ro.vendor.at_library=libqti-at.so \
 ro.vendor.extension_library=libqti-perfd-client.so \
 ro.vendor.qti.am.reschedule_service=true \
-ro.vendor.qti.core_ctl_min_cpu=2 \
-ro.vendor.qti.core_ctl_max_cpu=4 \
-ro.sys.fw.dex2oat_thread_count=4 \
+ro.sys.fw.dex2oat_thread_count=8
 
 # Netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.use_data_netmgrd=true \
 persist.data.netmgrd.qos.enable=true \
 persist.data.mode=concurrent
+
+# Perf
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.sys.fw.dex2oat_thread_count=4 \
+dalvik.vm.boot-dex2oat-threads=8 \
+dalvik.vm.dex2oat-threads=4 \
+dalvik.vm.image-dex2oat-threads=4
 
 # Nitz
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -167,7 +182,7 @@ persist.rild.nitz_short_ons_3=""
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
-rild.libargs=-d /dev/smd0 \
+rild.libargs=-d/dev/smd0 \
 ril.subscription.types=NV,RUIM \
 DEVICE_PROVISIONED=1 \
 ro.telephony.default_network=22,20 \
@@ -188,13 +203,13 @@ persist.dbg.volte_avail_ovr=1 \
 persist.dbg.vt_avail_ovr=1 \
 persist.radio.aosp_usr_pref_sel=true \
 persist.radio.apm_sim_not_pwdn=1 \
-persist.radio.calls.on.ims=true \
+persist.radio.calls.on.ims=0 \
 persist.radio.csvt.enabled=false \
 persist.radio.custom_ecc=1 \
 persist.radio.flexmap_type=nw_mode \
 persist.radio.hw_mbn_update=0 \
 persist.radio.ims.cmcc=true \
-persist.radio.jbims=1 \
+persist.radio.jbims=0 \
 persist.radio.mt_sms_ack=20 \
 persist.radio.multisim.config=dsds \
 persist.radio.oem_socket=true \
@@ -210,13 +225,10 @@ persist.vendor.radio.manual_nw_rej_ct=1 \
 persist.vendor.radio.rat_on=combine \
 persist.vendor.radio.sib16_support=1 \
 service.qti.ims.enabled=1 \
-telephony.lteOnCdmaDevice=1
+telephony.lteOnCdmaDevice=1 \
+persist.radio.schd.cache=3500
 
- #SdcardFs
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.sys.sdcardfs=true
-
-# Time Services \
+# Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.timed.enable=true
 
@@ -243,13 +255,4 @@ wifi.interface=wlan0
 # Create zram disk
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.config.zram=true
-# Create Swap disk, if below sys-prop enabled & also if device has lower (< 1 GB) RAM
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.config.swap=true
 
-# ADB
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.adb.secure=0 \
-persist.service.debuggable=1 \
-persist.service.adb.enable=1 \
-persist.sys.usb.config=mtp,adb
